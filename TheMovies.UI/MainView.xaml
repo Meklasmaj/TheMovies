@@ -19,6 +19,7 @@
         
         <StackPanel Grid.Row="1" HorizontalAlignment="Center">
             <TextBlock Foreground="Beige" FontSize="65" FontWeight="DemiBold">The Movies</TextBlock>
+            <ComboBox BorderThickness="0"></ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,30">
             <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic">Registrér Film</Button>
