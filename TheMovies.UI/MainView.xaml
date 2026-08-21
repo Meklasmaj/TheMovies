@@ -1,0 +1,30 @@
+﻿<Page x:Class="TheMovies.UI.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:TheMovies.UI"
+      mc:Ignorable="d"
+      Title="MainView" Height="450" Width="800" Background="#2B2B2B">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Foreground="Beige" FontSize="65" FontWeight="DemiBold">The Movies</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic">Registrér Film</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic">Luk Program</Button>
+        </StackPanel>
+    </Grid>
+</Page>
