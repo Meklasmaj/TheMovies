@@ -26,7 +26,10 @@ public class InMemoryRepository<T> : IGenericRepo<T> where T : IHasId
 
     public void Update(T item)
     {
-        _items[(_items.IndexOf(_items.Find(p => p.Id == item.Id)))] = item;
+        if (_items[(_items.IndexOf(_items.Find(p => p.Id == item.Id)))] != null)
+        {
+            _items[(_items.IndexOf(_items.Find(p => p.Id == item.Id)))] = item;
+        }
     }
 
     public void Remove(int id)

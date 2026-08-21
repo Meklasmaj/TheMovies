@@ -72,7 +72,10 @@ public class FileRepository<T> : IGenericRepo<T> where T : IHasId
     public void Update(T item)
     {
         List<T> items = GetAll().ToList();
-        items[(items.IndexOf(items.Find(p => p.Id == item.Id)))] = item;
+        if (items[(items.IndexOf(items.Find(p => p.Id == item.Id)))] != null)
+        {
+            items[(items.IndexOf(items.Find(p => p.Id == item.Id)))] = item;
+        }
         Save(items);
     }
 
