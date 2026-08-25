@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#2B2B2B">
     <Grid>
-        
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
     </Grid>
 </Window>
