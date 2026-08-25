@@ -1,8 +1,10 @@
-﻿namespace TheMovies.UI;
+﻿using TheMovies.Ui.ViewModels;
+
+namespace TheMovies.UI;
 
 public class NavigationService
 {
-    /*private readonly ViewModelBase _viewModelBase;
+    private readonly ViewModelBase _viewModelBase;
 
     public NavigationService(ViewModelBase viewModelBase)
     {
@@ -13,5 +15,5 @@ public class NavigationService
     public void NavigateTo<T>() where T : ViewModelBase, new()
     {
         _viewModelBase.CurrentViewModel = new T();
-    }*/
+    }
 }

@@ -1,8 +1,9 @@
 ﻿using System.Windows.Input;
+using TheMovies.Ui.ViewModels;
 
 namespace TheMovies.UI;
 
-public class MainViewModel
+public class MainViewModel : ViewModelBase
 {
     public ICommand RegisterMovieViewCommand { get; private set; }
     public ICommand KillProgramCommand { get; private set; }
