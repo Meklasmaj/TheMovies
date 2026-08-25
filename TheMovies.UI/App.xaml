@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:TheMovies.UI"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- Creates a connection between ViewModel and View -->
+        <DataTemplate DataType="{x:Type local:MainViewModel}">
+             <local:MainView/>
+         </DataTemplate>
     </Application.Resources>
 </Application>
