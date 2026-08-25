@@ -2,7 +2,7 @@
 
 namespace TheMovies.UI;
 
-public partial class MainView : Page
+public partial class MainView : UserControl
 {
     public MainView()
     {
