@@ -2,15 +2,16 @@
 
 public class NavigationService
 {
-    private readonly MainViewModel _mainViewModel;
+    /*private readonly ViewModelBase _viewModelBase;
 
-    public NavigationService(MainViewModel mainViewModel)
+    public NavigationService(ViewModelBase viewModelBase)
     {
-        _mainViewModel = mainViewModel;
+        _viewModelBase = viewModelBase;
     }
 
-    /*public void NavigateTo<T>() where T : ViewModelBase, new()
+    // Method that switches active view model to a generic(T) view model. Next viewmodel needs to be new
+    public void NavigateTo<T>() where T : ViewModelBase, new()
     {
-        _mainViewModel.CurrentViewModel = new T();
+        _viewModelBase.CurrentViewModel = new T();
     }*/
 }
