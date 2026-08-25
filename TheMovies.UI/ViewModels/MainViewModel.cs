@@ -1,30 +1,24 @@
-﻿using System.Windows.Input;
-using TheMovies.Ui.ViewModels;
+﻿using System.Windows;
+using System.Windows.Input;
 
-namespace TheMovies.UI;
+namespace TheMovies.UI.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    public ICommand RegisterMovieViewCommand { get; private set; }
-    public ICommand KillProgramCommand { get; private set; }
+    // Field and Property for an active ViewModel, switching this changes the view.
+    private ViewModelBase _currentViewModel;
+    public ViewModelBase CurrentViewModel
+    {
+        get => _currentViewModel;
+        set
+        {
+            _currentViewModel = value;
+            OnPropertyChanged();
+        }
+    }
 
     public MainViewModel()
     {
-        //RegisterMovieViewCommand = new RelayCommand(RegisterMovieViewSwitch);
-        //KillProgramCommand = new RelayCommand(KillProgram);
-    }
-
-    public void RegisterMovieViewSwitch(object parameter)
-    {
-        //NAV
-    }
-
-    /// <summary>
-    /// Kills program
-    /// </summary>
-    /// <param name="parameter"></param>
-    public void KillProgram(object parameter)
-    {
-        Environment.Exit(0);
+        CurrentViewModel = new MainViewViewModel();
     }
 }

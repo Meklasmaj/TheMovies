@@ -2,10 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TheMovies.UI"
-             StartupUri="MainWindow.xaml">
+             xmlns:viewModels="clr-namespace:TheMovies.UI.ViewModels">
     <Application.Resources>
         <!-- Creates a connection between ViewModel and View -->
-        <DataTemplate DataType="{x:Type local:MainViewModel}">
+        <DataTemplate DataType="{x:Type viewModels:MainViewViewModel}">
              <local:MainView/>
          </DataTemplate>
     </Application.Resources>

@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using TheMovies.UI;
 
-namespace TheMovies.Ui.ViewModels
+namespace TheMovies.UI.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnPropertyChanged(string name)
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }

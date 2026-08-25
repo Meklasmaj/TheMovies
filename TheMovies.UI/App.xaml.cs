@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
-using TheMovies.Ui.ViewModels;
+using TheMovies.UI.ViewModels;
 
 namespace TheMovies.UI;
 
@@ -10,8 +10,8 @@ namespace TheMovies.UI;
 /// </summary>
 public partial class App : Application
 {
-    static ViewModelBase viewModelBase = new ViewModelBase();
-    public static NavigationService NavigationService = new NavigationService(viewModelBase);
+    static MainViewModel _mainViewModel = new MainViewModel();
+    public static NavigationService NavigationService = new NavigationService(_mainViewModel);
     
     // Overrides method that runs on startup
     protected override void OnStartup(StartupEventArgs e)
@@ -23,7 +23,7 @@ public partial class App : Application
         var mainWindow = new MainWindow()
         {
             // Setting DataContext of the new Window to viewModelBase
-            DataContext = viewModelBase
+            DataContext = _mainViewModel
         };
         
         // Opens new window
