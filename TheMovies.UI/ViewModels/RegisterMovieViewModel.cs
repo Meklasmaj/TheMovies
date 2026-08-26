@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 using TheMovies.Core;
 using TheMovies.Core.Interfaces;
@@ -60,8 +61,19 @@ namespace TheMovies.UI.ViewModels
             Movie movie = new Movie(title, genre, duration);
         
             movieRepository.Add(movie); // Assuming _movieRepository is defined and initialized elsewhere
+            
+            MessageBox.Show($"{title}, {genre}, {duration}");
+            title = "";
+            genre = Genre.ActionandAdventure;
+            duration = 0;
 
         }
+
+        // WIP
+        /*public bool CanRegisterMovie(object parameter)
+        {
+            return !string.IsNullOrWhiteSpace(title);
+        }*/
 
         public void GoBack(object parameter)
         {
