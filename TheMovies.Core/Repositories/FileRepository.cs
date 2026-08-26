@@ -63,7 +63,10 @@ public class FileRepository<T> : IGenericRepo<T> where T : IHasId
     public void Add(T item)
     {
         List<T> items = GetAll().ToList();
-        _id = items.Max(p => p.Id) + 1;
+        if (items.Count != 0)
+        {
+            _id = items.Max(p => p.Id) + 1;
+        }
         item.Id = _id;
         items.Add(item);
         Save(items);
