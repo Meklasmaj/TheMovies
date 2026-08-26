@@ -22,13 +22,8 @@ namespace TheMovies.UI
         public RegisterMovieView()
         {
             InitializeComponent();
-            DataContext = new RegisterMovieView();
             //Below do we need to add this to be able to safe the movie to the file?
             //IGenericRepo repo = new FileGenericRepository<Movie>("movies.json");
-
         }
-
-
-
     }
 }

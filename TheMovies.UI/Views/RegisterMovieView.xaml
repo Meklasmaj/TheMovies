@@ -13,7 +13,7 @@
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Titel:" Width="100" Height="34" Margin="2"/>
-                <TextBox Text="{Binding Title}" 
+                <TextBox Text="{Binding title}" 
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
             
@@ -23,13 +23,13 @@
                 <!-- ItemSource = all the options in the dropdown -->
                 <!-- SelectedItem = the currently slected Genre -->
                 <ComboBox 
-                          ItemsSource="{Binding Genres}" SelectedItem="{Binding Genre}" 
+                          ItemsSource="{Binding Genres}" SelectedItem="{Binding genre}" 
                           Width="350" Height="34" Margin="2"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Duration:" Width="100" Height="34" Margin="2"/>
-                <TextBox Text="{Binding Duration}"
+                <TextBox Text="{Binding duration}"
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
             

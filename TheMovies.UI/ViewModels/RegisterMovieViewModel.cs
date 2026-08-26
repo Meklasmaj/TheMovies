@@ -11,32 +11,34 @@ namespace TheMovies.UI.ViewModels
     // This class is responsible for handling the logic of the RegisterMovieView
     public class RegisterMovieViewModel : ViewModelBase
     {
-       
+        private string _title;
         public string title 
         {
-            get => title; 
+            get => _title; 
             set
-            { title = value; OnPropertyChanged();  
+            { _title = value; OnPropertyChanged();  
             }
         }
 
+        private Genre _genre;
         public Genre genre
         {
-            get => genre;
+            get => _genre;
             set
             {
-                genre = value; OnPropertyChanged();
+                _genre = value; OnPropertyChanged();
             }
         }
 
         public Genre[] Genres => Enum.GetValues<Genre>();
 
+        private int _duration;
         public int duration  
         { 
-            get => duration;
+            get => _duration;
             set
             {
-                duration = value; OnPropertyChanged();
+                _duration = value; OnPropertyChanged();
             }
         }
 
@@ -64,7 +66,7 @@ namespace TheMovies.UI.ViewModels
         public void GoBack(object parameter)
         {
             // navigate back to the previous view
-
+            App.NavigationService.NavigateTo<MainViewViewModel>();
         }
     }
 }

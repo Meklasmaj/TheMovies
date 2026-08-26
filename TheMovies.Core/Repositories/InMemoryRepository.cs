@@ -19,7 +19,10 @@ public class InMemoryRepository<T> : IGenericRepo<T> where T : IHasId
 
     public void Add(T item)
     {
-        _id = _items.Max(p => p.Id) + 1;
+        if (_items.Count != 0)
+        {
+            _id = _items.Max(p => p.Id) + 1;
+        }
         item.Id = _id;
         _items.Add(item);
     }

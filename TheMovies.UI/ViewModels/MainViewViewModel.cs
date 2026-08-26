@@ -16,7 +16,8 @@ public class MainViewViewModel : ViewModelBase
 
     public void RegisterMovieViewSwitch(object parameter)
     {
-        //App.NavigationService.NavigateTo<RegisterMovieViewModel>();
+        // Navigates to RegisterMovieViewModel
+        App.NavigationService.NavigateTo<RegisterMovieViewModel>();
     }
 
     /// <summary>
