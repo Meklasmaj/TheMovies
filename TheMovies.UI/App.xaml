@@ -8,5 +8,8 @@
         <DataTemplate DataType="{x:Type viewModels:MainViewViewModel}">
              <local:MainView/>
          </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:RegisterMovieViewModel}">
+             <local:RegisterMovieView/>
+         </DataTemplate>
     </Application.Resources>
 </Application>

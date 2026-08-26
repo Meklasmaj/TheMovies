@@ -16,9 +16,7 @@ public class MainViewViewModel : ViewModelBase
 
     public void RegisterMovieViewSwitch(object parameter)
     {
-        // WIP
-        MessageBox.Show("Hello World!");
-        //App.NavigationService.NavigateTo<>();
+        //App.NavigationService.NavigateTo<RegisterMovieViewModel>();
     }
 
     /// <summary>
