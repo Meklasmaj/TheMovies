@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="TheMovies.UI.RegisterMovieView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheMovies.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="482" d:DesignWidth="732">
+    
+    <Grid Margin="0,0,38,-36">
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,124,0,206">
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Titel:" Width="100" Height="34" Margin="2"/>
+                <TextBox Text="{Binding Title}" 
+                         Width="350" Height="34" Margin="2"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Genre:" Width="100" Height="34" Margin="2"/>
+                
+                <!-- ItemSource = all the options in the dropdown -->
+                <!-- SelectedItem = the currently slected Genre -->
+                <ComboBox 
+                          ItemsSource="{Binding Genres}" SelectedItem="{Binding Genre}" 
+                          Width="350" Height="34" Margin="2"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Duration:" Width="100" Height="34" Margin="2"/>
+                <TextBox Text="{Binding Duration}"
+                         Width="350" Height="34" Margin="2"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="290,282,0,90" Width="216">
+            <Button Content="Register" 
+                    Command="{Binding RegisterMovieCommand}"
+                    Width="100" Height="30" Margin="5"/>
+            
+            <Button Content="Afbryd" 
+                    Command="{Binding GoBackCommand}"
+                    Width="100" Height="30" Margin="5"/>
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>
