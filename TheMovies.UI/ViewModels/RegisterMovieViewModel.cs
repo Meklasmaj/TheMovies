@@ -11,7 +11,6 @@ namespace TheMovies.UI.ViewModels
     // This class is responsible for handling the logic of the RegisterMovieView
     public class RegisterMovieViewModel : ViewModelBase
     {
-        private readonly IGenericRepo<Movie> movieRepository;
        
         public string title 
         {
@@ -30,7 +29,7 @@ namespace TheMovies.UI.ViewModels
             }
         }
 
-        public Genre[] genres { get; } => Enum.GetValues<Genre>();
+        public Genre[] Genres => Enum.GetValues<Genre>();
 
         public int duration  
         { 
