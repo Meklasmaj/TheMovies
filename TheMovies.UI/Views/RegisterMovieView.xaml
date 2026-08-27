@@ -13,7 +13,7 @@
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Titel:" Width="100" Height="34" Margin="2"/>
-                <TextBox Text="{Binding title}" 
+                <TextBox Text="{Binding title, UpdateSourceTrigger=PropertyChanged}" 
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
             
@@ -29,7 +29,7 @@
             
             <StackPanel Orientation="Horizontal">
                 <Label Content="Duration:" Width="100" Height="34" Margin="2"/>
-                <TextBox Text="{Binding duration}"
+                <TextBox Text="{Binding duration, UpdateSourceTrigger=PropertyChanged}"
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
             

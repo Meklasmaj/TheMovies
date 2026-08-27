@@ -17,7 +17,8 @@ namespace TheMovies.UI.ViewModels
         {
             get => _title; 
             set
-            { _title = value; OnPropertyChanged();  
+            { _title = value; OnPropertyChanged();
+                RegisterMovieCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -40,17 +41,18 @@ namespace TheMovies.UI.ViewModels
             set
             {
                 _duration = value; OnPropertyChanged();
+                RegisterMovieCommand.RaiseCanExecuteChanged();
             }
         }
 
-        public ICommand RegisterMovieCommand { get; }
+        public RelayCommand RegisterMovieCommand { get; }
         public ICommand GoBackCommand { get; }
 
 
         public RegisterMovieViewModel()
         {
             //  Initialize commands with RelayCommand
-            RegisterMovieCommand = new RelayCommand(RegisterMovie);
+            RegisterMovieCommand = new RelayCommand(RegisterMovie, CanRegisterMovie);
             GoBackCommand = new RelayCommand(GoBack);
 
         }
@@ -68,12 +70,11 @@ namespace TheMovies.UI.ViewModels
             duration = 0;
 
         }
-
-        // WIP
-        /*public bool CanRegisterMovie(object parameter)
+        
+        public bool CanRegisterMovie(object parameter)
         {
-            return !string.IsNullOrWhiteSpace(title);
-        }*/
+            return !string.IsNullOrWhiteSpace(title) && duration > 0;
+        }
 
         public void GoBack(object parameter)
         {
