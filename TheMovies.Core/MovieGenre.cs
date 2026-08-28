@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TheMovies.Core
 {
-    public enum Genre
+    public enum MovieGenre
     {
         ActionandAdventure,
         Comedy,

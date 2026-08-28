@@ -22,17 +22,17 @@ namespace TheMovies.UI.ViewModels
             }
         }
 
-        private Genre _genre;
-        public Genre genre
+        private MovieGenre _movieGenre;
+        public MovieGenre MovieGenre
         {
-            get => _genre;
+            get => _movieGenre;
             set
             {
-                _genre = value; OnPropertyChanged();
+                _movieGenre = value; OnPropertyChanged();
             }
         }
 
-        public Genre[] Genres => Enum.GetValues<Genre>();
+        public MovieGenre[] Genres => Enum.GetValues<MovieGenre>();
 
         private int _duration;
         public int duration  
@@ -46,7 +46,7 @@ namespace TheMovies.UI.ViewModels
         }
 
         public RelayCommand RegisterMovieCommand { get; }
-        public ICommand GoBackCommand { get; }
+        public RelayCommand GoBackCommand { get; }
 
 
         public RegisterMovieViewModel()
@@ -60,13 +60,13 @@ namespace TheMovies.UI.ViewModels
         public void RegisterMovie(object parameter)
         {
             // register a new movie
-            Movie movie = new Movie(title, genre, duration);
+            Movie movie = new Movie(title, MovieGenre, duration);
         
             movieRepository.Add(movie); // Assuming _movieRepository is defined and initialized elsewhere
             
-            MessageBox.Show($"{title}, {genre}, {duration}");
+            MessageBox.Show($"{title}, {MovieGenre}, {duration}");
             title = "";
-            genre = Genre.ActionandAdventure;
+            MovieGenre = MovieGenre.ActionandAdventure;
             duration = 0;
 
         }

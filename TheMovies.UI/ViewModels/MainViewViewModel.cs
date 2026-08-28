@@ -5,8 +5,8 @@ namespace TheMovies.UI.ViewModels;
 
 public class MainViewViewModel : ViewModelBase
 {
-    public ICommand RegisterMovieViewCommand { get; private set; }
-    public ICommand KillProgramCommand { get; private set; }
+    public RelayCommand RegisterMovieViewCommand { get; private set; }
+    public RelayCommand KillProgramCommand { get; private set; }
 
     public MainViewViewModel()
     {

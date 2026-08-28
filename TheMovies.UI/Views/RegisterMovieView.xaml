@@ -23,7 +23,7 @@
                 <!-- ItemSource = all the options in the dropdown -->
                 <!-- SelectedItem = the currently slected Genre -->
                 <ComboBox 
-                          ItemsSource="{Binding Genres}" SelectedItem="{Binding genre}" 
+                          ItemsSource="{Binding Genres}" SelectedItem="{Binding MovieGenre}" 
                           Width="350" Height="34" Margin="2"/>
             </StackPanel>
             
