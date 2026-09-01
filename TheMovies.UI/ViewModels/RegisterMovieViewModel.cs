@@ -55,7 +55,7 @@ namespace TheMovies.UI.ViewModels
             }
         }
 
-        private DateTime _premiereDate;
+        private DateTime _premiereDate = DateTime.Now;
         public DateTime premiereDate
         {
             get => _premiereDate;
@@ -89,7 +89,7 @@ namespace TheMovies.UI.ViewModels
             MovieGenre = MovieGenre.ActionandAdventure;
             duration = 0;
             movieDirector = "";
-            premiereDate = DateTime.MinValue; 
+            premiereDate = DateTime.Now; 
 
         }
         
