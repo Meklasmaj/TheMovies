@@ -6,9 +6,6 @@ namespace TheMovies.UI.ViewModels;
 public class MovieListViewModel : ViewModelBase
 {
     public ObservableCollection<Movie> Movies { get; set; }
-    public ObservableCollection<string> MovieTitles { get; set; }
-    public ObservableCollection<string> MovieGenres { get; set; }
-    public ObservableCollection<string> MovieDurations { get; set; }
     public RelayCommand GoBackCommand { get; set; }
     public RelayCommand DeleteMovieCommand { get; set; }
 
