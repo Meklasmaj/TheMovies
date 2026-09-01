@@ -9,7 +9,7 @@ public class MovieListViewModel : ViewModelBase
     public RelayCommand GoBackCommand { get; set; }
     public RelayCommand DeleteMovieCommand { get; set; }
 
-    private string _columns = $"{"Titel",-25}{"Genre",-25}{"Varighed",-15}";
+    private string _columns = $"{"Titel",-25}{"Genre",-25}{"Varighed",-15}{"Instruktør",-25}{"Premiære Dato",-15}";
     public string Columns
     {
         get => _columns;

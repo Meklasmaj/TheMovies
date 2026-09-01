@@ -25,6 +25,6 @@ public class Movie : IHasId
 
     public override string ToString()
     {
-        return $"{title,-25}{MovieGenre,-25}{duration,-15}Tim Burton 24/12/2008";
+        return $"{title,-25}{MovieGenre,-25}{duration,-15}{movieDirector,-25}{premiereDate.ToShortDateString(),-15}";
     }
 }
