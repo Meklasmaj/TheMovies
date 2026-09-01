@@ -45,6 +45,26 @@ namespace TheMovies.UI.ViewModels
             }
         }
 
+        private string _movieDirector;
+        public string movieDirector 
+        {
+            get => _movieDirector;
+            set
+            {
+                _movieDirector = value; OnPropertyChanged();
+            }
+        }
+
+        private DateTime _premiereDate;
+        public DateTime premiereDate
+        {
+            get => _premiereDate;
+            set
+            {
+                _premiereDate = value; OnPropertyChanged();
+            }
+        }
+
         public RelayCommand RegisterMovieCommand { get; }
         public RelayCommand GoBackCommand { get; }
 
@@ -60,14 +80,16 @@ namespace TheMovies.UI.ViewModels
         public void RegisterMovie(object parameter)
         {
             // register a new movie
-            Movie movie = new Movie(title, MovieGenre, duration);
+            Movie movie = new(title, MovieGenre, duration, movieDirector, premiereDate);
         
             movieRepository.Add(movie); // Assuming _movieRepository is defined and initialized elsewhere
             
-            MessageBox.Show($"{title}, {MovieGenre}, {duration}");
+            MessageBox.Show($"{title}, {MovieGenre}, {duration}, {movieDirector}, {premiereDate}");
             title = "";
             MovieGenre = MovieGenre.ActionandAdventure;
             duration = 0;
+            movieDirector = "";
+            premiereDate = DateTime.MinValue; 
 
         }
         

@@ -4,42 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TheMovies.UI"
-             mc:Ignorable="d" 
-             d:DesignHeight="482" d:DesignWidth="732">
-    
-    <Grid Margin="0,0,38,-36">
+             mc:Ignorable="d" d:DesignWidth="732" Height="528">
+
+    <Grid>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,124,0,206">
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Titel:" Width="100" Height="34" Margin="2"/>
                 <TextBox Text="{Binding title, UpdateSourceTrigger=PropertyChanged}" 
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Genre:" Width="100" Height="34" Margin="2"/>
-                
+
                 <!-- ItemSource = all the options in the dropdown -->
                 <!-- SelectedItem = the currently slected Genre -->
                 <ComboBox 
                           ItemsSource="{Binding Genres}" SelectedItem="{Binding MovieGenre}" 
                           Width="350" Height="34" Margin="2"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label Content="Duration:" Width="100" Height="34" Margin="2"/>
                 <TextBox Text="{Binding duration, UpdateSourceTrigger=PropertyChanged}"
                          Width="350" Height="34" Margin="2"/>
             </StackPanel>
-            
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Director:" Width="100" Height="34" Margin="2"/>
+                <TextBox Text="{Binding movieDirector,UpdateSourceTrigger=PropertyChanged}"
+                         Width="350" Height="34" Margin="2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Premiere Date:" Width="100" Height="34" Margin="2"/>
+                <DatePicker SelectedDate="{Binding premiereDate, UpdateSourceTrigger=PropertyChanged}"
+                            Width="350" Height="34" Margin="2"/>
+            </StackPanel>
+
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="290,282,0,90" Width="216">
             <Button Content="Register" 
                     Command="{Binding RegisterMovieCommand}"
-                    Width="100" Height="30" Margin="5"/>
-            
+                    Width="100" Height="30" Margin="5" Click="Button_Click"/>
+
             <Button Content="Afbryd" 
                     Command="{Binding GoBackCommand}"
                     Width="100" Height="30" Margin="5"/>

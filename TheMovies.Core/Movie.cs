@@ -10,13 +10,17 @@ public class Movie : IHasId
     public MovieGenre MovieGenre { get; set; }    //enum type for genre
     public int duration { get; set; }
     public int Id { get; set; }
+    public string movieDirector { get; set; } 
+    public DateTime premiereDate { get; set; } = new DateTime();
 
     //Constructor
-    public Movie(string title, MovieGenre movieGenre, int duration)
+    public Movie(string title, MovieGenre movieGenre, int duration, string movieDirector, DateTime premiereDate)
     {
         this.title = title;
         this.MovieGenre = movieGenre;
         this.duration = duration;
+        this.movieDirector = movieDirector;
+        this.premiereDate = premiereDate;
     }
 
 }
