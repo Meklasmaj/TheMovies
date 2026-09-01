@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="TheMovies.UI.Views.MovieListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TheMovies.UI.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Title -->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock FontSize="30" FontWeight="DemiBold" Foreground="Beige">Film</TextBlock>
+        </StackPanel>
+        
+        <!-- Column titles -->
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <TextBlock FontSize="12" FontStyle="Italic" Background="#3B3B3B" Foreground="Beige" Text="{Binding Columns}" FontFamily="Consolas"/>
+        </StackPanel>
+        
+        <!-- ListBox -->
+        <StackPanel Grid.Column="1" Grid.Row="3" Margin="0, 0, 0, 15">
+            <ListBox ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}" Height="300" Foreground="Beige" Background="#3B3B3B" BorderThickness="0" FontFamily="Consolas"/>
+        </StackPanel>
+        
+        <!-- Delete Button -->
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left">
+            <Button Width="75" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding DeleteMovieCommand}">Slet</Button>
+        </StackPanel>
+        
+        <!-- Back Button -->
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right">
+            <Button Width="75" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding GoBackCommand}">Tilbage</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

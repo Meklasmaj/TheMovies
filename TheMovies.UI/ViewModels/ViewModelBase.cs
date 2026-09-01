@@ -10,9 +10,9 @@ namespace TheMovies.UI.ViewModels
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected readonly IGenericRepo<Movie> movieRepository = new InMemoryRepository<Movie>();
-
+        
+        protected static readonly IGenericRepo<Movie> movieRepository = new InMemoryRepository<Movie>();
+        
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
