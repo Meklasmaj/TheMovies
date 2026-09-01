@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMovies.Core", "TheMovies
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMovies.UI", "TheMovies.UI\TheMovies.UI.csproj", "{B1B16FA1-E952-42AE-849D-58593AE4C3A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheMovies.Tests", "TheMovies.Tests\TheMovies.Tests.csproj", "{2A073251-1B87-419E-9883-FC847C874715}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B1B16FA1-E952-42AE-849D-58593AE4C3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B16FA1-E952-42AE-849D-58593AE4C3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B16FA1-E952-42AE-849D-58593AE4C3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A073251-1B87-419E-9883-FC847C874715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A073251-1B87-419E-9883-FC847C874715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A073251-1B87-419E-9883-FC847C874715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A073251-1B87-419E-9883-FC847C874715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
