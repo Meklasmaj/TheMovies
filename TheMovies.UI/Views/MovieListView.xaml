@@ -33,10 +33,15 @@
         
         <!-- ListBox -->
         <StackPanel Grid.Column="1" Grid.Row="3" Margin="0, 0, 0, 15">
-            <ListBox ItemsSource="{Binding Movies}" Height="300" Foreground="Beige" Background="#3B3B3B" BorderThickness="0" FontFamily="Consolas"/>
+            <ListBox ItemsSource="{Binding Movies}" SelectedItem="{Binding SelectedMovie}" Height="300" Foreground="Beige" Background="#3B3B3B" BorderThickness="0" FontFamily="Consolas"/>
         </StackPanel>
         
-        <!-- BackButton -->
+        <!-- Delete Button -->
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left">
+            <Button Width="75" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding DeleteMovieCommand}">Slet</Button>
+        </StackPanel>
+        
+        <!-- Back Button -->
         <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right">
             <Button Width="75" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding GoBackCommand}">Tilbage</Button>
         </StackPanel>
