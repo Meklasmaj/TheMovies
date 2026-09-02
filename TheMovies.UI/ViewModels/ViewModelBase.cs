@@ -11,7 +11,7 @@ namespace TheMovies.UI.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         
-        protected static readonly IGenericRepo<Movie> movieRepository = new InMemoryRepository<Movie>();
+        protected static readonly IGenericRepo<Movie> movieRepository = new FileRepository<Movie>("movies.json");
         
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
