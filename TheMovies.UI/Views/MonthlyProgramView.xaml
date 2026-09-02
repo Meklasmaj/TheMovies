@@ -148,28 +148,40 @@
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Dato"
-                                        Binding="{Binding Date, StringFormat=dd/MM/yyyy}"
-                                        Width="*"/>
+                        Binding="{Binding Date, StringFormat=dd/MM/yyyy}"
+                        Width="*"/>
 
-                    <DataGridTextColumn Header="StartTid"
-                                        Binding="{Binding StartTime, StringFormat=HH:mm}"
-                                        Width="*"/>
+                    <DataGridTextColumn Header="Starttid"
+                        Binding="{Binding StartTime, StringFormat=HH:mm}"
+                        Width="*"/>
 
                     <DataGridTextColumn Header="Sal"
-                                        Binding="{Binding Screen.ScreenNumber}"
-                                        Width="*"/>
+                        Binding="{Binding Screen.ScreenNumber}"
+                        Width="*"/>
 
                     <DataGridTextColumn Header="Film"
-                                        Binding="{Binding Movie.Title}"
-                                        Width="2*"/>
+                        Binding="{Binding Movie.Title}"
+                        Width="2*"/>
 
-                    <DataGridTextColumn Header="Spilletid"
-                                        Binding="{Binding Movie.Duration}"
-                                        Width="*"/>
+                    <DataGridTextColumn Header="Genre"
+                        Binding="{Binding Movie.MovieGenre}"
+                        Width="*"/>
 
-                    <DataGridTextColumn Header="SlutTid"
-                                        Binding="{Binding EndTime, StringFormat=HH:mm}"
-                                        Width="*"/>
+                    <DataGridTextColumn Header="Varighed"
+                        Binding="{Binding Movie.Duration}"
+                        Width="*"/>
+
+                    <DataGridTextColumn Header="Instruktør"
+                        Binding="{Binding Movie.MovieDirector}"
+                        Width="2*"/>
+
+                    <DataGridTextColumn Header="Premieredato"
+                        Binding="{Binding Movie.PremiereDate, StringFormat=dd/MM/yyyy}"
+                        Width="*"/>
+
+                    <DataGridTextColumn Header="Sluttid"
+                        Binding="{Binding EndTime, StringFormat=HH:mm}"
+                        Width="*"/>
 
                 </DataGrid.Columns>
             </DataGrid>
