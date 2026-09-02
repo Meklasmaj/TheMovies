@@ -63,6 +63,7 @@ namespace TheMovies.UI.ViewModels
                 OnPropertyChanged();
 
                 LoadScreens();
+                LoadMonthlyProgram();
 
                 SaveShowCommand.RaiseCanExecuteChanged();
                 SaveMonthlyProgramCommand.RaiseCanExecuteChanged();
@@ -203,6 +204,27 @@ namespace TheMovies.UI.ViewModels
             }
 
             Screen = null;
+        }
+
+        private void LoadMonthlyProgram()
+        {
+            Shows.Clear();
+
+            if (Cinema == null)
+                return;
+
+            MonthlyProgram? existingProgram = monthlyProgramRepository.GetAll()
+                .FirstOrDefault(program => program.Month == Month && program.Year == Year && program.Cinema.Name == Cinema.Name);
+
+            if (existingProgram == null)
+                return;
+
+            foreach (Show show in existingProgram.Shows)
+            {
+                Shows.Add(show);
+            }
+
+            SaveMonthlyProgramCommand.RaiseCanExecuteChanged();
         }
 
         private bool CanSaveShow(object? parameter)
