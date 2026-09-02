@@ -14,6 +14,22 @@ public class MainViewModel : ViewModelBase
         {
             _currentViewModel = value;
             OnPropertyChanged();
+            OnPropertyChanged(nameof(WindowTitle));
+        }
+    }
+
+    public string WindowTitle
+    {
+        get
+        {
+            return CurrentViewModel switch
+            {
+                MainViewViewModel => "The Movies",
+                RegisterMovieViewModel => "The Movies - Registrér film",
+                MovieListViewModel => "The Movies - Film",
+                MonthlyProgramViewModel => "The Movies - Månedsprogram",
+                _ => "The Movies"
+            };
         }
     }
 
