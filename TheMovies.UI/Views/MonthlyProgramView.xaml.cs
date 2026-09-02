@@ -15,7 +15,7 @@ namespace TheMovies.UI.Views
     /// <summary>
     /// Interaction logic for MonthlyProgramView.xaml
     /// </summary>
-    public partial class MonthlyProgramView : Window
+    public partial class MonthlyProgramView : UserControl
     {
         public MonthlyProgramView()
         {

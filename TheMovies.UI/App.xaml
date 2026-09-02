@@ -15,5 +15,8 @@
         <DataTemplate DataType="{x:Type viewModels:MovieListViewModel}">
             <views:MovieListView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:MonthlyProgramViewModel}">
+            <views:MonthlyProgramView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

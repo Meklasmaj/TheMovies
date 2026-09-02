@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="55"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -33,7 +33,12 @@
         <StackPanel Grid.Row="5" HorizontalAlignment="Center" Margin="0,0,0,30">
             <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding MovieListViewCommand}">Vis Liste af Film</Button>
         </StackPanel>
-        
+
+        <!-- MonthlyProgramButton -->
+        <StackPanel Grid.Row="4" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding MonthlyProgramViewCommand}">Opret Månedsprogram</Button>
+        </StackPanel>
+
         <!-- CloseButton -->
         <StackPanel Grid.Row="7" HorizontalAlignment="Center" Margin="0,0,0,30">
             <Button Width="200" Height="30" Background="Beige" Foreground="#2B2B2B" FontStyle="Italic" Command="{Binding KillProgramCommand}">Luk Program</Button>

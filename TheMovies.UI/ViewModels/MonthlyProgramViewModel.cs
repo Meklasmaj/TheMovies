@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
 using TheMovies.Core;
 using TheMovies.Core.Interfaces;
 using TheMovies.UI.ViewModels;
 
-namespace TheMovies.UI
+namespace TheMovies.UI.ViewModels
 {
     public class MonthlyProgramViewModel : ViewModelBase
     {
@@ -38,6 +39,7 @@ namespace TheMovies.UI
             {
                 _month = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(MonthDisplay));
             }
         }
 
@@ -48,6 +50,7 @@ namespace TheMovies.UI
             {
                 _year = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(MonthDisplay));
             }
         }
 
@@ -126,16 +129,33 @@ namespace TheMovies.UI
             }
         }
 
+        public string MonthDisplay
+        {
+            get
+            {
+                if (Month < 1 || Month > 12 || Year < 1)
+                {
+                    return "";
+                }
+
+                DateTime date = new DateTime(Year, Month, 1);
+
+                string result = date.ToString("MMMM yyyy", new CultureInfo("da-DK"));
+
+                return char.ToUpper(result[0]) + result[1..];
+            }
+        }
+
         public RelayCommand SaveShowCommand { get; }
         public RelayCommand SaveMonthlyProgramCommand { get; }
         public RelayCommand DeleteShowCommand { get; }
         public RelayCommand GoBackCommand { get; }
 
 
-        public MonthlyProgramViewModel(IGenericRepo<Cinema> cinemaRepository, IGenericRepo<MonthlyProgram> monthlyProgramRepository)
+        public MonthlyProgramViewModel()
         {
-            this.cinemaRepository = cinemaRepository;
-            this.monthlyProgramRepository = monthlyProgramRepository;
+            cinemaRepository = App.CinemaRepository;
+            monthlyProgramRepository = App.MonthlyProgramRepository;
 
             DateTime nextMonth = DateTime.Today.AddMonths(1);
 
@@ -163,7 +183,8 @@ namespace TheMovies.UI
         private void LoadCinemas()
         {
             Cinemas.Clear();
-            foreach (var cinema in cinemaRepository.GetAll())
+
+            foreach (Cinema cinema in cinemaRepository.GetAll())
             {
                 Cinemas.Add(cinema);
             }
@@ -176,7 +197,7 @@ namespace TheMovies.UI
             if (Cinema == null)
                 return;
 
-            foreach (Screen screen in Cinema.Screens)
+            foreach (Screen screen in Cinema.screens)
             {
                 Screens.Add(screen);
             }
@@ -197,9 +218,9 @@ namespace TheMovies.UI
         {
             DateTime startTime = Date.Date + StartTime.TimeOfDay;
 
-            Show show = new Show(Movie!, Screen!, Date.Date, startTime);
+            int PlayTime = Movie!.duration + 15 + 15; // duration + 15 min ads + 15 min cleaning
 
-            show.PlayTime = Movie!.duration + 15 + 15; // duration + 15 min ads + 15 min cleaning
+            Show show = new Show(Movie!, Screen!, Date.Date, startTime, PlayTime);
 
             Shows.Add(show);
 
@@ -216,7 +237,7 @@ namespace TheMovies.UI
             if (Cinema == null)
                 return;
 
-            MonthlyProgram monthlyProgram = new MonthlyProgram(Cinema);
+            MonthlyProgram monthlyProgram = new MonthlyProgram(Month, Year, Cinema);
 
             foreach (Show show in Shows)
             {
