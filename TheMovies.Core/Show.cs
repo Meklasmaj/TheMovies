@@ -11,8 +11,8 @@ namespace TheMovies.Core;
         public Movie Movie { get; set; }
         public Screen Screen { get; set; }
         public DateTime Date { get; set; }
-        public DateTime startTime { get; set; }
-        public int playTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public int PlayTime { get; set; }
 
     //Constructor
     public Show(Movie movie, Screen screen, DateTime date, DateTime startTime, int playTime)
@@ -20,13 +20,13 @@ namespace TheMovies.Core;
         Movie = movie;
         Screen = screen;
         Date = date;
-        startTime = startTime;
-        playTime = playTime;
+        StartTime = startTime;
+        PlayTime = playTime;
     }
 
     public override string ToString()
         {
-            return $"{Movie.title,-25}{Screen.screenNumber,-15}{Date.ToShortDateString(),-15}{startTime.ToShortTimeString(),-15}{playTime,-15}";
+            return $"{Movie.title,-25}{Screen.ScreenNumber,-15}{Date.ToShortDateString(),-15}{StartTime.ToShortTimeString(),-15}{PlayTime,-15}";
         }
   
 }

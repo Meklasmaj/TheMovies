@@ -27,10 +27,25 @@ public partial class App : Application
         // Checks if there are any cinemas in the repository, if not it adds some default cinemas
         if (!CinemaRepository.GetAll().Any())
         {
-            CinemaRepository.Add(new Cinema("Hjerm"));
-            CinemaRepository.Add(new Cinema("Videbæk"));
-            CinemaRepository.Add(new Cinema("Thorsminde"));
-            CinemaRepository.Add(new Cinema("Ræhr"));
+            Cinema hjerm = new Cinema("Hjerm");
+            hjerm.AddScreen(new Screen(1));
+            hjerm.AddScreen(new Screen(2));
+
+            Cinema videbaek = new Cinema("Videbæk");
+            videbaek.AddScreen(new Screen(1));
+            videbaek.AddScreen(new Screen(2));
+            videbaek.AddScreen(new Screen(3));
+
+            Cinema thorsminde = new Cinema("Thorsminde");
+            thorsminde.AddScreen(new Screen(1));
+
+            Cinema raehr = new Cinema("Ræhr");
+            raehr.AddScreen(new Screen(1));
+
+            CinemaRepository.Add(hjerm);
+            CinemaRepository.Add(videbaek);
+            CinemaRepository.Add(thorsminde);
+            CinemaRepository.Add(raehr);
         }
 
         // Creates new Window

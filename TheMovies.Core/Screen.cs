@@ -6,7 +6,12 @@ namespace TheMovies.Core
 {
     public class Screen
     {
-        public int screenNumber { get; set; }
+        public int ScreenNumber { get; set; }
+
+        public Screen(int screenNumber)
+        {
+            ScreenNumber = screenNumber;
+        }
     }
 
     
