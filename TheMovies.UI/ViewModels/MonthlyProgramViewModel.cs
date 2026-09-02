@@ -276,7 +276,7 @@ namespace TheMovies.UI.ViewModels
 
         private void DeleteShow(object? parameter)
         {
-            if (SelectedShow != null)
+            if (SelectedShow == null)
                 return;
 
             Shows.Remove(SelectedShow);
