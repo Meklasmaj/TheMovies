@@ -240,9 +240,9 @@ namespace TheMovies.UI.ViewModels
         {
             DateTime startTime = Date.Date + StartTime.TimeOfDay;
 
-            int PlayTime = Movie!.Duration + 15 + 15; // duration + 15 min ads + 15 min cleaning
+            int playTime = Movie!.Duration; // Duration of movie already has the extra time added for cleaning and ads, so we can use it directly
 
-            Show show = new Show(Movie!, Screen!, Date.Date, startTime, PlayTime);
+            Show show = new Show(Movie!, Screen!, Date.Date, startTime, playTime);
 
             Shows.Add(show);
 
