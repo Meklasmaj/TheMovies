@@ -45,7 +45,7 @@ public sealed class Test1
         movieRepo.Add(new Movie("BatMan", MovieGenre.Comedy, 130, "Tim Burton", DateTime.Now));
         movieRepo.Add(new Movie("IronMan", MovieGenre.Drama, 160, "Tim Burton", DateTime.Now));
         
-        Assert.AreEqual("BatMan", movieRepo.GetAll().ElementAt(1).title);
+        Assert.AreEqual("BatMan", movieRepo.GetAll().ElementAt(1).Title);
     }
     
     [TestMethod]
@@ -61,7 +61,7 @@ public sealed class Test1
         movieRepo.Remove(1);
         
         Assert.IsNull(movieRepo.GetAll().FirstOrDefault(x => x.Id == 1));
-        Assert.IsNull(movieRepo.GetAll().FirstOrDefault(x => x.title == "BatMan"));
+        Assert.IsNull(movieRepo.GetAll().FirstOrDefault(x => x.Title == "BatMan"));
         Assert.IsNotNull(movieRepo.GetAll().FirstOrDefault(x => x.Id == 2));
     }
     
@@ -76,11 +76,11 @@ public sealed class Test1
         movieRepo.Add(new Movie("IronMan", MovieGenre.Drama, 160, "Tim Burton", DateTime.Now));
 
         Movie movie = movieRepo.Get(1);
-        movie.title = "Superman";
+        movie.Title = "Superman";
         movieRepo.Update(movie);
         
-        Assert.IsNull(movieRepo.GetAll().FirstOrDefault(x => x.title == "BatMan"));
-        Assert.AreEqual("Superman", movieRepo.GetAll().ElementAt(1).title);
+        Assert.IsNull(movieRepo.GetAll().FirstOrDefault(x => x.Title == "BatMan"));
+        Assert.AreEqual("Superman", movieRepo.GetAll().ElementAt(1).Title);
     }
     
     [TestMethod]

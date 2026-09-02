@@ -218,7 +218,7 @@ namespace TheMovies.UI.ViewModels
         {
             DateTime startTime = Date.Date + StartTime.TimeOfDay;
 
-            int PlayTime = Movie!.duration + 15 + 15; // duration + 15 min ads + 15 min cleaning
+            int PlayTime = Movie!.Duration + 15 + 15; // duration + 15 min ads + 15 min cleaning
 
             Show show = new Show(Movie!, Screen!, Date.Date, startTime, PlayTime);
 

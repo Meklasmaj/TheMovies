@@ -26,7 +26,7 @@ namespace TheMovies.Core;
 
     public override string ToString()
         {
-            return $"{Movie.title,-25}{Screen.ScreenNumber,-15}{Date.ToShortDateString(),-15}{StartTime.ToShortTimeString(),-15}{PlayTime,-15}";
+            return $"{Movie.Title,-25}{Screen.ScreenNumber,-15}{Date.ToShortDateString(),-15}{StartTime.ToShortTimeString(),-15}{PlayTime,-15}";
         }
   
 }

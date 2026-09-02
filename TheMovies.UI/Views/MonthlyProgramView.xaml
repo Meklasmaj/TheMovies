@@ -112,8 +112,9 @@
                        VerticalAlignment="Center"
                        Margin="0,0,8,0"/>
 
-            <TextBox Grid.Column="10"
-                     Text="{Binding StartTime}"
+            <TextBox x:Name="StartTimeTextBox"
+                     Grid.Column="10"
+                     Text="{Binding StartTime, StringFormat={}{0:HH:mm}, UpdateSourceTrigger=LostFocus}"
                      Padding="6"/>
 
             <!-- Gem forestilling -->
