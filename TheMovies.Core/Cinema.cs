@@ -11,6 +11,8 @@ namespace TheMovies.Core;
         public string Name { get; set; }
         public List<Screen> Screens { get; set; } = new List<Screen>();
 
+    public Cinema() { }
+
     // Original constructor
     public Cinema(int id, string name, List<Screen> screens) 
     { 

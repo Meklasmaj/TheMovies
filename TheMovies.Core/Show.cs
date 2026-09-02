@@ -19,6 +19,8 @@ public class Show : IHasId
         get => StartTime.AddMinutes(PlayTime + 30); // Adding 30 minutes for cleaning time and ads
     }
 
+    public Show() { }
+
     //Constructor
     public Show(Movie movie, Screen screen, DateTime date, DateTime startTime, int playTime)
     {

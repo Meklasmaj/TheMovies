@@ -259,14 +259,28 @@ namespace TheMovies.UI.ViewModels
             if (Cinema == null)
                 return;
 
-            MonthlyProgram monthlyProgram = new MonthlyProgram(Month, Year, Cinema);
+            MonthlyProgram? existingProgram = monthlyProgramRepository.GetAll()
+                .FirstOrDefault(program => program.Month == Month && program.Year == Year && program.Cinema.Name == Cinema.Name);
 
-            foreach (Show show in Shows)
+            if (existingProgram == null)
             {
-                monthlyProgram.AddShow(show);
+                MonthlyProgram monthlyProgram = new MonthlyProgram(Month, Year, Cinema);
+
+                foreach (Show show in Shows)
+                {
+                    monthlyProgram.AddShow(show);
+                }
+
+                monthlyProgramRepository.Add(monthlyProgram);
             }
 
-            monthlyProgramRepository.Add(monthlyProgram);
+            else
+            {
+                existingProgram.Cinema = Cinema;
+                existingProgram.Shows = Shows.ToList();
+
+                monthlyProgramRepository.Update(existingProgram);
+            }
         }
 
         private bool CanDeleteShow(object? parameter)

@@ -8,6 +8,8 @@ namespace TheMovies.Core
     {
         public int ScreenNumber { get; set; }
 
+        public Screen() { }
+
         public Screen(int screenNumber)
         {
             ScreenNumber = screenNumber;
