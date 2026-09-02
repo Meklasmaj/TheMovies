@@ -24,11 +24,14 @@ public partial class App : Application
         // Does the normal startup
         base.OnStartup(e);
 
-        // Fixed cinema data
-        CinemaRepository.Add(new Cinema { Id = 1, name = "Hjerm"});
-        CinemaRepository.Add(new Cinema { Id = 2, name = "Videbæk" });
-        CinemaRepository.Add(new Cinema { Id = 3, name = "Thorsminde" });
-        CinemaRepository.Add(new Cinema { Id = 4, name = "Ræhr" });
+        // Checks if there are any cinemas in the repository, if not it adds some default cinemas
+        if (!CinemaRepository.GetAll().Any())
+        {
+            CinemaRepository.Add(new Cinema("Hjerm"));
+            CinemaRepository.Add(new Cinema("Videbæk"));
+            CinemaRepository.Add(new Cinema("Thorsminde"));
+            CinemaRepository.Add(new Cinema("Ræhr"));
+        }
 
         // Creates new Window
         var mainWindow = new MainWindow()

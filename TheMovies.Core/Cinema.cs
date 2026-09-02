@@ -8,25 +8,32 @@ namespace TheMovies.Core;
     public class Cinema : IHasId
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        public List<Screen> screens { get; set; } = new List<Screen>();
+        public string Name { get; set; }
+        public List<Screen> Screens { get; set; } = new List<Screen>();
 
-    //Connstructor
+    // Original constructor
     public Cinema(int id, string name, List<Screen> screens) 
     { 
         Id = id;
-        this.name = name;
-        this.screens = screens; 
+        this.Name = name;
+        this.Screens = screens; 
+    }
+
+    // Bonus constructor for fixed cinema data
+    public Cinema(string name)
+    {
+        this.Name = name;
+        this.Screens = new List<Screen>();
     }
 
     public void AddScreen(Screen screen)
     {
-        screens.Add(screen);
+        this.Screens.Add(screen);
     }
 
     public void RemoveScreen(Screen screen)
     {
-        screens.Remove(screen);
+        this.Screens.Remove(screen);
     }
 
 

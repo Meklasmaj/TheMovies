@@ -197,7 +197,7 @@ namespace TheMovies.UI.ViewModels
             if (Cinema == null)
                 return;
 
-            foreach (Screen screen in Cinema.screens)
+            foreach (Screen screen in Cinema.Screens)
             {
                 Screens.Add(screen);
             }
