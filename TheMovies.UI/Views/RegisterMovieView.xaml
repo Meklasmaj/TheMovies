@@ -11,37 +11,37 @@
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,124,0,206">
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Titel:" Width="100" Height="34" Margin="2"/>
+                <Label Content="Titel:" Width="100" Height="34" Margin="2" Foreground="Beige"/>
                 <TextBox Text="{Binding title, UpdateSourceTrigger=PropertyChanged}" 
-                         Width="350" Height="34" Margin="2"/>
+                         Width="350" Height="34" Margin="2" Background="Beige"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Genre:" Width="100" Height="34" Margin="2"/>
+                <Label Content="Genre:" Width="100" Height="34" Margin="2" Foreground="Beige"/>
 
                 <!-- ItemSource = all the options in the dropdown -->
                 <!-- SelectedItem = the currently slected Genre -->
                 <ComboBox 
                           ItemsSource="{Binding Genres}" SelectedItem="{Binding MovieGenre}" 
-                          Width="350" Height="34" Margin="2"/>
+                          Width="350" Height="34" Margin="2" Background="Beige"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Duration:" Width="100" Height="34" Margin="2"/>
+                <Label Content="Duration:" Width="100" Height="34" Margin="2" Foreground="Beige"/>
                 <TextBox Text="{Binding duration, UpdateSourceTrigger=PropertyChanged}"
-                         Width="350" Height="34" Margin="2"/>
+                         Width="350" Height="34" Margin="2" Background="Beige"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Director:" Width="100" Height="34" Margin="2"/>
+                <Label Content="Director:" Width="100" Height="34" Margin="2" Foreground="Beige"/>
                 <TextBox Text="{Binding movieDirector,UpdateSourceTrigger=PropertyChanged}"
-                         Width="350" Height="34" Margin="2"/>
+                         Width="350" Height="34" Margin="2" Background="Beige"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Premiere Date:" Width="100" Height="34" Margin="2"/>
+                <Label Content="Premiere Date:" Width="100" Height="34" Margin="2" Foreground="Beige"/>
                 <DatePicker SelectedDate="{Binding premiereDate, UpdateSourceTrigger=PropertyChanged}"
-                            Width="350" Height="34" Margin="2"/>
+                            Width="350" Height="34" Margin="2" BorderThickness="0"/>
             </StackPanel>
 
         </StackPanel>
@@ -49,11 +49,11 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="290,282,0,90" Width="216">
             <Button Content="Register" 
                     Command="{Binding RegisterMovieCommand}"
-                    Width="100" Height="30" Margin="5" Click="Button_Click"/>
+                    Width="100" Height="30" Margin="5" Click="Button_Click" Background="Beige"/>
 
             <Button Content="Afbryd" 
                     Command="{Binding GoBackCommand}"
-                    Width="100" Height="30" Margin="5"/>
+                    Width="100" Height="30" Margin="5" Background="Beige"/>
         </StackPanel>
 
 
