@@ -239,13 +239,23 @@ namespace TheMovies.UI.ViewModels
         private void SaveShow(object? parameter)
         {
             DateTime startTime = Date.Date + StartTime.TimeOfDay;
+            int playTime = Movie!.Duration;
+            Show newShow = new Show(Movie!, Screen!, Date.Date, startTime, playTime);
 
-            int playTime = Movie!.Duration; // Duration of movie already has the extra time added for cleaning and ads, so we can use it directly
+            bool overlaps = Shows.Any(existingShow => existingShow.Date.Date == newShow.Date.Date &&
+                existingShow.Screen.ScreenNumber == newShow.Screen.ScreenNumber &&
+                newShow.StartTime < existingShow.EndTime &&
+                newShow.EndTime > existingShow.StartTime);
 
-            Show show = new Show(Movie!, Screen!, Date.Date, startTime, playTime);
+            if (overlaps)
+            {
+                MessageBox.Show("Der findes allerede en forestilling i denne sal på det valgte tidspunkt.",
+                    "Overlappende forestilling", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-            Shows.Add(show);
+                return;
+            }
 
+            Shows.Add(newShow);
             SaveMonthlyProgramCommand.RaiseCanExecuteChanged();
         }
 
